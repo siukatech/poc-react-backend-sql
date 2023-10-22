@@ -80,6 +80,9 @@ values ('shf goku', 'admin', 'admin', 1)
 ;
 
 select * from i18n where 1=1 order by message_key;
+select * from i18n where 1=1 and message_key like '%merchant%' order by message_key;
+select * from i18n where 1=1 and message_key like 'merchant.%' order by message_key;
+select message_key , message_en , message_zh , message_cn , created_by , last_modified_by , 1 as version_no from i18n where 1=1 and message_key like 'item.%' order by message_key;
 --delete from i18n where 1=1 and id in (6, 16, 18, 20);
 
 insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
@@ -203,7 +206,35 @@ values
 , ('menu.merchants.all', 'All merchants', '全部商戶', '全部商户', 'admin', 'admin', 1)
 , ('menu.merchants.add', 'Add new merchant', '新增商戶', '新增商户', 'admin', 'admin', 1)
 ;
+insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+values 
+('menu.i18n', 'i18n', 'i18n', 'i18n', 'admin', 'admin', 1)
+, ('menu.i18n.all', 'All i18n messages', '全部i18n', '全部i18n', 'admin', 'admin', 1)
+, ('menu.i18n.add', 'Add new i18n message', '新增i18n', '新增i18n', 'admin', 'admin', 1)
+;
 
+
+INSERT INTO i18n (message_key,message_en,message_zh,message_cn,created_by,last_modified_by,version_no) VALUES
+   ('merchant.createdBy','Created By','創建者','创建者','admin','admin',1),
+   ('merchant.createdDatetime','Created Datetime','創建時間','创建时间','admin','admin',1),
+   ('merchant.description','Description','介紹','介绍','admin','admin',1),
+--   ('merchant.form','Merchant Form','商戶表格','商户表格','admin','admin',1),
+   ('merchant.title','Merchant Form','商戶表格','商户表格','admin','admin',1),
+   ('merchant.id','Id','Id','Id','admin','admin',1),
+   ('merchant.id.description','Id Helper text','Id Helper text','Id Helper text','admin','admin',1),
+   ('merchant.mid','Mid','Mid','Mid','admin','admin',1),
+   ('merchant.lastModifiedBy','Last Modified By','最後編輯者','最后编辑者','admin','admin',1),
+   ('merchant.lastModifiedDatetime','Last Modified Datetime','最後編輯時間','最后编辑时间','admin','admin',1),
+   ('merchant.name','Name','名稱','名称','admin','admin',1),
+   ('merchant.name.description','Name Helper text','名稱 Helper text','名称 Helper text','admin','admin',1),
+--   ('merchant.name.helperText','Helper text','Helper text','Helper text','admin','admin',1),
+   ('merchant.purchasedDate','Purchased Date','購買日期','购买日期','admin','admin',1),
+   ('merchant.purchasedDate.helperText','Helper text','Helper text','Helper text','admin','admin',1),
+--   ('merchant.title','Title','標題','标题','admin','admin',1),
+   ('merchant.update.completed','Update completed','更新成功','更新成功','admin','admin',1),
+   ('merchant.versionNo','Version No','版本','版本','admin','admin',1);
+;
+ 
 
 --update i18n set message_key = 'button.view.fullscreen'
 --where 1=1 and message_key = 'button.viewFullscreen'
@@ -320,6 +351,147 @@ insert into items (name, purchased_date, created_by, created_datetime, last_modi
 
 --select * from items where 1=1;
 
+select * from users where 1=1;
+select * from notis where 1=1;
+
+insert into instant_msgs (subject, message, status, user_id, sender_id, created_by, last_modified_by, version_no)
+values ('subject 1', 'message 1', 'UNREAD', 1, 1, 'admin', 'admin', 1)
+;
+
+insert into notis (subject, message, status, rel_type, rel_id, user_id, created_by, last_modified_by, version_no)
+values ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+, ('subject ', 'message ', 'UNREAD', 'InstantMsg', 1, 1, 'admin', 'admin', 1)
+;
+update notis set subject = subject || id, message  = message || id where 1=1; 
+
+
+
+insert into applications (mid, name, created_by, last_modified_by, version_no)
+values ('frontend-app', 'Frontend App', 'admin', 'admin', 1)
+;
+insert into app_resources (mid, name, app_mid, access_right, created_by, last_modified_by, version_no)
+values ('menu.home', 'Menu Home', 'frontend-app', 'view', 'admin', 'admin', 1)
+, ('menu.items', 'Menu Items', 'frontend-app', 'view', 'admin', 'admin', 1)
+, ('menu.shops', 'Menu Shops', 'frontend-app', 'view', 'admin', 'admin', 1)
+, ('menu.merchants', 'Menu Merchants', 'frontend-app', 'view', 'admin', 'admin', 1)
+, ('menu.i18n', 'Menu i18n', 'frontend-app', 'view', 'admin', 'admin', 1)
+
+
+insert into user_roles (mid, name, created_by, last_modified_by, version_no)
+values ('role-user-01', 'User 01', 'admin', 'admin', 1)
+, ('role-admin-01', 'Admin 01', 'admin', 'admin', 1)
+;
+insert into user_role_permissions (user_role_mid, app_mid, resource_mid, access_right, created_by, last_modified_by, version_no)
+values ('role-user-01', 'frontend-app', 'menu.home', 'view', 'admin', 'admin', 1)
+, ('role-user-01', 'frontend-app', 'menu.items', 'view', 'admin', 'admin', 1)
+, ('role-user-01', 'frontend-app', 'menu.shops', 'view', 'admin', 'admin', 1)
+, ('role-user-01', 'frontend-app', 'menu.merchants', 'view', 'admin', 'admin', 1)
+;
+
+insert into user_role_users (user_role_id, user_id, created_by, last_modified_by, version_no)
+values (
+(select id from user_roles where 1=1 and mid = 'role-user-01')
+, (select id from users where 1=1 and login_id = 'app-user-01')
+, 'admin', 'admin', 1)
+;
+
+
+select * from applications a where 1=1;
+select * from app_resources ar where 1=1;
+select * from user_roles ur where 1=1;
+select * from user_role_permissions urp where 1=1;
+select * from user_role_users uru where 1=1;
+
+select u.login_id, u.id
+--, uru.id, uru.user_id, uru.user_role_id, ur.id
+, urp.user_role_mid, urp.app_mid , urp.resource_mid , urp.access_right 
+from users u
+inner join user_role_users uru on 1=1 
+and uru.user_id = u.id 
+inner join user_roles ur on 1=1  
+and ur.id = uru.user_role_id
+inner join user_role_permissions urp on 1=1
+and urp.user_role_mid = ur.mid 
+inner join app_resources ar on 1=1
+and ar.mid = urp.resource_mid and ar.app_mid = urp.app_mid 
+inner join applications a on 1=1
+and a.mid = ar.app_mid 
+where 1=1
+and u.login_id = 'app-user-01'
+;
+
+            select u.login_id as loginId, u.id as userId
+            --, uru.id userRoleUserId, uru.user_id as userId2, uru.user_role_id userRoleId, ur.id userRoleId2
+            , urp.id, urp.user_role_mid userRoleMid, urp.app_mid appMid, urp.resource_mid resourceMid, urp.access_right accessRight
+            from users u
+            inner join user_role_users uru on 1=1
+            and uru.user_id = u.id 
+            inner join user_roles ur on 1=1
+            and ur.id = uru.user_role_id
+            inner join user_role_permissions urp on 1=1
+            and urp.user_role_mid = ur.mid 
+            inner join app_resources ar on 1=1
+            and ar.mid = urp.resource_mid and ar.app_mid = urp.app_mid 
+            inner join applications a on 1=1
+            and a.mid = ar.app_mid 
+            where 1=1
+            and u.login_id = 'app-user-01'
+;
+
+    select
+        up.* 
+    from
+        ( select
+            u.login_id login_id,
+            u.id user_id,
+            urp.id id,
+            urp.user_role_mid user_role_mid,
+            urp.app_mid app_mid,
+            urp.resource_mid resource_mid,
+            urp.access_right access_right 
+        from
+            users u 
+        inner join
+            user_role_users uru 
+                on 1=1 
+                and uru.user_id = u.id 
+        inner join
+            user_roles ur 
+                on 1=1 
+                and ur.id = uru.user_role_id 
+        inner join
+            user_role_permissions urp 
+                on 1=1 
+                and urp.user_role_mid = ur.mid 
+        inner join
+            app_resources ar 
+                on 1=1 
+                and ar.mid = urp.resource_mid 
+                and ar.app_mid = urp.app_mid 
+        inner join
+            applications a 
+                on 1=1 
+                and a.mid = ar.app_mid 
+        where
+            1=1 
+--            and u.login_id = 'app-user-01' 
+            ) as up 
+;
 
 
 
