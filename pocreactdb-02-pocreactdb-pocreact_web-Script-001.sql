@@ -82,6 +82,8 @@ values ('shf goku', 'admin', 'admin', 1)
 select * from i18n where 1=1 order by message_key;
 select * from i18n where 1=1 and message_key like '%merchant%' order by message_key;
 select * from i18n where 1=1 and message_key like 'merchant.%' order by message_key;
+select * from i18n where 1=1 and message_key like 'error.%' order by message_key;
+select * from i18n where 1=1 and message_key like 'button.%' order by message_key;
 select message_key , message_en , message_zh , message_cn , created_by , last_modified_by , 1 as version_no from i18n where 1=1 and message_key like 'item.%' order by message_key;
 --delete from i18n where 1=1 and id in (6, 16, 18, 20);
 
@@ -198,6 +200,7 @@ values ('error.login.expired', 'Login expired', '登入失效', '登入失效', 
 , ('error.login.failed', 'Login failed', '登入失敗', '登入失败', 'admin', 'admin', 1)
 , ('error.access.denied', 'Access denied', '沒有權限', '没有权限', 'admin', 'admin', 1)
 , ('item.update.completed', 'Update completed', '更新成功', '更新成功', 'admin', 'admin', 1)
+, ('error.dialog.title', 'Error', '錯誤', '错误', 'admin', 'admin', 1)
 ;
 
 insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
