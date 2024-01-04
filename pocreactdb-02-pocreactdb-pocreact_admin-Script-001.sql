@@ -39,7 +39,8 @@ select gen_random_uuid();
 -- https://postgresql.org/docs/16/uuid-ossp.html
 create extension "uuid-ossp";
 select uuid_generate_v1();
-select uuid_generate_v5('', 'i18n');
+--select uuid_generate_v5('', 'i18n');
+select uuid_generate_v5(uuid_ns_oid(), 'i18n');
 
 
 
@@ -349,6 +350,33 @@ comment on column instant_msgs.user_id is 'Recipient of this message';
 
 create index instant_msgs_idx1_status on instant_msgs(status);
 create index instant_msgs_idx2_sender_id on instant_msgs(sender_id);
+
+
+
+create table if not exists attachments (
+  id uuid default 
+--  gen_random_uuid()
+  uuid_generate_v5(uuid_ns_oid(), 'attachments')
+  , file_name varchar(350) not null
+  , file_type varchar(500) not null
+  , file_size int null
+  , file_content bytea null
+  , user_id int null
+  , created_by varchar(150) not null
+  , created_datetime timestamp not null default now()
+  , last_modified_by varchar(150) not null
+  , last_modified_datetime timestamp not null default now()
+  , version_no int not null
+  , primary key (id)
+  , constraint attachments_fk1_user_id foreign key(user_id) references users(id) on delete set null
+);
+
+comment on column attachments.user_id is 'Owner of attachments';
+
+create index attachments_idx1_file_name on attachments(file_name);
+
+
+
 
 
 

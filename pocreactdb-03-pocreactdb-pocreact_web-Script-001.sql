@@ -497,4 +497,10 @@ and u.login_id = 'app-user-01'
 ;
 
 
+select * from attachments where 1=1;
+
+
+
+
+
 
