@@ -84,10 +84,10 @@ select * from i18n where 1=1 and message_key like '%merchant%' order by message_
 select * from i18n where 1=1 and message_key like 'merchant.%' order by message_key;
 select * from i18n where 1=1 and message_key like 'error.%' order by message_key;
 select * from i18n where 1=1 and message_key like 'button.%' order by message_key;
-select message_key , message_en , message_zh , message_cn , created_by , last_modified_by , 1 as version_no from i18n where 1=1 and message_key like 'item.%' order by message_key;
+select message_key , message_en , message_tc , message_sc , created_by , last_modified_by , 1 as version_no from i18n where 1=1 and message_key like 'item.%' order by message_key;
 --delete from i18n where 1=1 and id in (6, 16, 18, 20);
 
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('hello', 'Hello, <2><1>{{firstNameKeyDb}} {{lastNameKeyDb}}</1></2>', '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}', '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}', 'admin', 'admin', 1)
 , ('item.title', 'Title', '標題', '标题', 'admin', 'admin', 1)
 , ('item.purchasedDate', 'Purchased Date', '購買日期', '购买日期', 'admin', 'admin', 1)
@@ -97,18 +97,18 @@ values ('hello', 'Hello, <2><1>{{firstNameKeyDb}} {{lastNameKeyDb}}</1></2>', '�
 , ('item.description', 'Description', '介紹', '介绍', 'admin', 'admin', 1)
 , ('button.view.fullscreen', 'View Fullscreen', '檢視全頁', '检视全页', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('menu.lang', 'Lang', '語言', '语言', 'admin', 'admin', 1)
 , ('menu.lang.en', 'En', 'En', 'En', 'admin', 'admin', 1)
 , ('menu.lang.zh', '繁', '繁', '繁', 'admin', 'admin', 1)
 , ('menu.lang.cn', '简', '简', '简', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('hello-link', 'Let''s learn React <1>here</1>', '一起來 <1>這裡</1> 學習 React 吧', 'Aprendamos React<1>aquí</1>', 'admin', 'admin', 1)
 , ('hello-title', 'My friend', '朋友', '朋友', 'admin', 'admin', 1)
 ;
 
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values 
 --('menu.items', 'Items', '玩具', '玩具', 'admin', 'admin', 1)
 --, ('menu.items.all', 'All items', '全部玩具', '全部玩具', 'admin', 'admin', 1)
@@ -126,27 +126,27 @@ values
 , ('menu.help', 'Help', 'Help', 'Help', 'admin', 'admin', 1)
 ;
 
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('button.edit', 'Edit', '編輯', '编辑', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('button.back', 'Back', '返回', '返回', 'admin', 'admin', 1)
 , ('button.cancel', 'Cancel', '取消', '取消', 'admin', 'admin', 1)
 , ('button.reset', 'Reset', '重置', '重置', 'admin', 'admin', 1)
 ;
 --delete from i18n where id in (38,39,40);
 --update i18n set message_key = 'button.reset' where message_key = 'button.reest';
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('item.lastModifiedDatetime', 'Last Modified Datetime', '最後編輯時間', '最后编辑时间', 'admin', 'admin', 1)
 , ('item.createdDatetime', 'Created Datetime', '創建時間', '创建时间', 'admin', 'admin', 1)
 , ('item.createdBy', 'Created By', '創建者', '创建者', 'admin', 'admin', 1)
 , ('item.lastModifiedBy', 'Last Modified By', '最後編輯者', '最后编辑者', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('item.versionNo', 'Version No', '版本', '版本', 'admin', 'admin', 1)
 ;
 
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('menu.noti.tooltip', 'Notification', '通知', '通知', 'admin', 'admin', 1)
 , ('menu.noti.label', 'Notification', '通知', '通知', 'admin', 'admin', 1)
 , ('menu.noti.title', 'Notification', '通知', '通知', 'admin', 'admin', 1)
@@ -161,7 +161,7 @@ values ('menu.noti.tooltip', 'Notification', '通知', '通知', 'admin', 'admin
 , ('app.title', 'Frontend App', 'Frontend App', 'Frontend App', 'admin', 'admin', 1)
 ;
 
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('menu.user.profile', 'Profile', '用戶檔案', '用户档案', 'admin', 'admin', 1)
 , ('menu.user.account', 'Account', '用戶帳戶', '用户帐户', 'admin', 'admin', 1)
 , ('menu.user.dashboard', 'Dashboard', 'Dashboard', 'Dashboard', 'admin', 'admin', 1)
@@ -171,10 +171,10 @@ values ('menu.user.profile', 'Profile', '用戶檔案', '用户档案', 'admin',
 , ('menu.login', 'Login', '登入', '登入', 'admin', 'admin', 1)
 , ('menu.login.tooltip', 'Login', '登入', '登入', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('menu.home', 'Home', '主頁', '主页', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('button.ok', 'OK', 'OK', 'OK', 'admin', 'admin', 1)
 , ('form.isDirty', 'Is Dirty?', 'Is Dirty?', 'Is Dirty?', 'admin', 'admin', 1)
 , ('item.name.helperText', 'Helper text', 'Helper text', 'Helper text', 'admin', 'admin', 1)
@@ -182,7 +182,7 @@ values ('button.ok', 'OK', 'OK', 'OK', 'admin', 'admin', 1)
 , ('item.form', 'Item Form', '物件表格', '物件表格', 'admin', 'admin', 1)
 , ('button.view', 'View', '檢視', '检视', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('warning.beforeunload', 'Are you sure you want to leave? All your entered data will be lost!'
 , 'Are you sure you want to leave? All your entered data will be lost!'
 , 'Are you sure you want to leave? All your entered data will be lost!', 'admin', 'admin', 1)
@@ -193,7 +193,7 @@ values ('warning.beforeunload', 'Are you sure you want to leave? All your entere
 --, 'error.login.failed', 'error.access.denied'
 --);
 
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('error.login.expired', 'Login expired', '登入失效', '登入失效', 'admin', 'admin', 1)
 , ('error.update.failed', 'Update failed', '更新失敗', '更新失败', 'admin', 'admin', 1)
 , ('warning.access.denied', 'Access denied', '沒有權限', '没有权限', 'admin', 'admin', 1)
@@ -203,13 +203,13 @@ values ('error.login.expired', 'Login expired', '登入失效', '登入失效', 
 , ('error.dialog.title', 'Error', '錯誤', '错误', 'admin', 'admin', 1)
 ;
 
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values 
 ('menu.merchants', 'Merchants', '商戶', '商户', 'admin', 'admin', 1)
 , ('menu.merchants.all', 'All merchants', '全部商戶', '全部商户', 'admin', 'admin', 1)
 , ('menu.merchants.add', 'Add new merchant', '新增商戶', '新增商户', 'admin', 'admin', 1)
 ;
-insert into i18n (message_key, message_en, message_zh, message_cn, created_by, last_modified_by, version_no)
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values 
 ('menu.i18n', 'i18n', 'i18n', 'i18n', 'admin', 'admin', 1)
 , ('menu.i18n.all', 'All i18n messages', '全部i18n', '全部i18n', 'admin', 'admin', 1)
@@ -217,7 +217,7 @@ values
 ;
 
 
-INSERT INTO i18n (message_key,message_en,message_zh,message_cn,created_by,last_modified_by,version_no) VALUES
+INSERT INTO i18n (message_key,message_en,message_tc,message_sc,created_by,last_modified_by,version_no) VALUES
    ('merchant.createdBy','Created By','創建者','创建者','admin','admin',1),
    ('merchant.createdDatetime','Created Datetime','創建時間','创建时间','admin','admin',1),
    ('merchant.description','Description','介紹','介绍','admin','admin',1),
@@ -242,37 +242,37 @@ INSERT INTO i18n (message_key,message_en,message_zh,message_cn,created_by,last_m
 --update i18n set message_key = 'button.view.fullscreen'
 --where 1=1 and message_key = 'button.viewFullscreen'
 --;
---update i18n set message_zh = '用戶帳號', message_cn = '用户帐号'
+--update i18n set message_tc = '用戶帳號', message_sc = '用户帐号'
 --where 1=1 and message_key = 'login.username.label'
 --;
---update i18n set message_zh = '我們不會分享你的用戶帳號', message_cn = '我们不会分享你的用户帐号'
+--update i18n set message_tc = '我們不會分享你的用戶帳號', message_sc = '我们不会分享你的用户帐号'
 --where 1=1 and message_key = 'login.username.helperText'
 --;
 --update i18n set message_en = 'Hello, <2><1>{{firstNameKeyDb}} {{lastNameKeyDb}}</1></2>'
---, message_zh = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
---, message_cn = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
+--, message_tc = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
+--, message_sc = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
 --where 1=1 and message_key = 'hello';
 --update i18n set message_en = 'Hello, <0>{{firstNameKeyDb}} {{lastNameKeyDb}}</0>'
---, message_zh = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
---, message_cn = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
+--, message_tc = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
+--, message_sc = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
 --where 1=1 and message_key = 'hello';
 --update i18n set message_en = 'Hello, {{firstNameKeyDb}} {{lastNameKeyDb}} {{test1KeyDd}}'
---, message_zh = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
---, message_cn = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
+--, message_tc = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
+--, message_sc = '你好, {{firstNameKeyDb}} {{lastNameKeyDb}}'
 --where 1=1 and message_key = 'hello';
 update i18n set message_en = 'Hello, <0>{{firstNameKeyDb}}</0> <1>{{lastNameKeyDb}}</1>'
-, message_zh = '你好, <0><1>{{firstNameKeyDb}} {{lastNameKeyDb}}</1></0>'
-, message_cn = '你好, <1>{{firstNameKeyDb}}</1> <0>{{lastNameKeyDb}}</0>'
+, message_tc = '你好, <0><1>{{firstNameKeyDb}} {{lastNameKeyDb}}</1></0>'
+, message_sc = '你好, <1>{{firstNameKeyDb}}</1> <0>{{lastNameKeyDb}}</0>'
 where 1=1 and message_key = 'hello';
 
 
 select * from i18n where 1=1 and message_key like '%.shops%';
 --update i18n set message_key = 'menu.shops', message_en = 'Shops 2'
---, message_zh = '店舖 2', message_cn = '店舖 2'
+--, message_tc = '店舖 2', message_sc = '店舖 2'
 --where 1=1 and id = 28;
---update i18n set message_en = 'Shops', message_zh = '店舖', message_cn = '店铺' where 1=1 and message_key = 'menu.shops';
---update i18n set message_en = 'Add new shop', message_zh = '全部店舖', message_cn = '全部店铺' where 1=1 and message_key = 'menu.shops.all';
---update i18n set message_en = 'All shops', message_zh = '新增店舖', message_cn = '新增店铺' where 1=1 and message_key = 'menu.shops.add';
+--update i18n set message_en = 'Shops', message_tc = '店舖', message_sc = '店铺' where 1=1 and message_key = 'menu.shops';
+--update i18n set message_en = 'Add new shop', message_tc = '全部店舖', message_sc = '全部店铺' where 1=1 and message_key = 'menu.shops.all';
+--update i18n set message_en = 'All shops', message_tc = '新增店舖', message_sc = '新增店铺' where 1=1 and message_key = 'menu.shops.add';
 
 
 select * from users where 1=1;

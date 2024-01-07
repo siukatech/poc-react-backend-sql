@@ -81,12 +81,15 @@ drop table if exists user_roles;
 
 
 
+--alter table i18n rename message_zh to message_tc;
+--alter table i18n rename message_cn to message_sc;
+
 create table if not exists i18n (
   id serial not null
   , message_key varchar(350) not null
   , message_en text null
-  , message_zh text null
-  , message_cn text null
+  , message_tc text null
+  , message_sc text null
   , created_by varchar(150) not null
   , created_datetime timestamp not null default now()
   , last_modified_by varchar(150) not null
@@ -353,12 +356,16 @@ create index instant_msgs_idx2_sender_id on instant_msgs(sender_id);
 
 
 
+--alter table attachments rename file_type to content_type;
+--alter table attachments alter column content_type type varchar(150);
+
+
 create table if not exists attachments (
   id uuid default 
 --  gen_random_uuid()
   uuid_generate_v5(uuid_ns_oid(), 'attachments')
   , file_name varchar(350) not null
-  , file_type varchar(500) not null
+  , content_type varchar(150) not null
   , file_size int null
   , file_content bytea null
   , user_id int null
@@ -375,6 +382,8 @@ comment on column attachments.user_id is 'Owner of attachments';
 
 create index attachments_idx1_file_name on attachments(file_name);
 
+-- describe table
+--select * from information_schema.columns where 1=1 and table_name = 'attachments';
 
 
 
