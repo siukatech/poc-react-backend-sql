@@ -128,12 +128,17 @@ values
 
 insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
 values ('button.edit', 'Edit', '編輯', '编辑', 'admin', 'admin', 1)
-;
-insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
-values ('button.back', 'Back', '返回', '返回', 'admin', 'admin', 1)
+, ('button.back', 'Back', '返回', '返回', 'admin', 'admin', 1)
 , ('button.cancel', 'Cancel', '取消', '取消', 'admin', 'admin', 1)
 , ('button.reset', 'Reset', '重置', '重置', 'admin', 'admin', 1)
+, ('button.upload', 'Upload', '上傳', '上传', 'admin', 'admin', 1)
 ;
+insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
+values ('upload.title', 'Upload', '檔案上傳', '上传', 'admin', 'admin', 1)
+, ('attachment.title', 'Attachments', '附件', '附件', 'admin', 'admin', 1)
+;
+--delete from i18n where message_key in ('upload.title');
+
 --delete from i18n where id in (38,39,40);
 --update i18n set message_key = 'button.reset' where message_key = 'button.reest';
 insert into i18n (message_key, message_en, message_tc, message_sc, created_by, last_modified_by, version_no)
@@ -498,9 +503,8 @@ and u.login_id = 'app-user-01'
 
 
 select * from attachments where 1=1;
-
-
-
+select * from attachments where 1=1 and id not in ('cc2749f0-882f-4eda-a5c8-ec82472cee97','e3bd9936-72af-4d36-8970-58a2525211b4');
+--delete from attachments where 1=1 and id not in ('cc2749f0-882f-4eda-a5c8-ec82472cee97','e3bd9936-72af-4d36-8970-58a2525211b4');
 
 
 
